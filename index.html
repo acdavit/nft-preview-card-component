@@ -1,8 +1,8 @@
 <!--
 --  
---  BitCamp Assignment No.1 - Build a QR code component
+--  BitCamp Assignment No.2 - NFT Preview Card Component
 --
---  Made by David Abakelia-Chartia (acdavit)
+--  Made by David Abakelia-Chartia (acdavid)
 --
 -->
 
@@ -25,16 +25,21 @@
     	justify-content: center;
     	align-items: center;
     }
-    
+
+		#eye-icon{
+			position: absolute;
+			left: 50%;
+			bottom: 50%;
+			transform: translate(-50%, -200%);
+			display:none;
+		}
+		
+		hr{border: 1px solid #2E405A}    
     #etherium-tag{color: #00FFF8}
     #name{color: white}
-    #nft-preview{border-radius: 8px}
+    #nft-preview{border-radius: 8px;}
     *{font-family: 'Outfit', sans-serif}
     .label{float: left}
-    
-    hr{
-    	border: 1px solid #2E405A;
-    }
     
     #creator-avatar{
     	border: 1px solid #FFFFFF;
@@ -54,6 +59,8 @@
     img{
       max-width: 100%;
       max-height: 100%;
+      margin: 0;
+      padding: 0;
     }
     
     .tag, #description, #creator-section{
@@ -80,6 +87,13 @@
       margin-bottom: 7px;
     }
     
+    #nft-preview:hover + #eye-icon{display: block}
+    #nft-preview:hover{
+    	background: #00FFF8;
+			mix-blend-mode: normal;
+			opacity: 0.5;
+    }
+    
     #card-element{
       width: 350px;
       background-color: #15263F;
@@ -93,11 +107,14 @@
 <body>
   <div id="card-element">
     <article>
-      <img
-        id="nft-preview"
-        alt="NFT Preview"
-        src="./images/image-equilibrium.jpg"
-      ></img>
+      <div> 
+      	<img
+        	id="nft-preview"
+        	alt="NFT Preview"
+        	src="./images/image-equilibrium.jpg"
+      	></img>
+      	<img id="eye-icon" src="./images/icon-view.svg"></img>
+      </div>
       <h1 id="name">Equilibrium #3429</h1>
       <p id="description">Our Equilibrium collection promotes balance and calm.</p>
     </article>
